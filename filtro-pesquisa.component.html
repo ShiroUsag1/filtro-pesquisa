@@ -1,0 +1,51 @@
+<div class="d-flex justify-content-md-end">
+  <div
+    *ngIf="busca || novo"
+    class="d-flex justify-content-md-end align-items-center p-0"
+  >
+    <div class="painelFiltro" [class.active]="painelFiltro">
+      <div class="d-flex justify-content-md-end align-items-center">
+        <input
+          type="text"
+          class="form-control border-secondary-subtle me-2"
+          [(ngModel)]="filtroBusca"
+        />
+        <button
+          type="button"
+          class="btn btn-primary botaoPesquisar me-2"
+          (click)="filtrarArtigos()"
+        >
+          <i class="bi bi-search"></i>
+        </button>
+        <button
+          type="button"
+          class="btn btn-primary botaoPesquisar"
+          (click)="limparFiltro()"
+        >
+          <i class="bi bi-eraser"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div
+    *ngIf="busca || novo"
+    class="d-flex justify-content-md-end align-items-center p-0 fitcontent"
+  >
+    <button
+      type="button"
+      class="btn btn-primary funnelbutton"
+      (click)="abrirPainel()"
+      *ngIf="busca"
+    >
+      <i class="bi bi-funnel"></i>
+    </button>
+    <button
+      type="button"
+      class="btn btn-primary botaoPesquisar ms-2 me-2"
+      *ngIf="novo"
+      (click)="chamarFuncaoNovo()"
+    >
+      <i class="bi bi-plus"></i>
+    </button>
+  </div>
+</div>
